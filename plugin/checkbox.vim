@@ -57,7 +57,7 @@ if !exists('g:insert_checkbox_suffix')
   let g:insert_checkbox_suffix = ' '
 endif
 
-fu! checkbox#ToggleCB()
+fu! s:ToggleCB()
 	let line = getline('.')
 
   if(match(line, '\[.\]') != -1)
@@ -78,10 +78,15 @@ fu! checkbox#ToggleCB()
   endif
 
 	call setline('.', line)
+
+    silent! call repeat#set("\<plug>CheckboxToggle")
 endf
 
-command! ToggleCB call checkbox#ToggleCB()
 
-map <silent> <leader>tt :call checkbox#ToggleCB()<cr>
+nnoremap <silent> <leader>tt <plug>CheckboxToggle<cr>
+nnoremap <silent> <plug>CheckboxToggle
+                  \ :<c-u>call <sid>ToggleCB()<cr>
+
+command! ToggleCB  :call <sid>ToggleCB()
 
 let g:loaded_checkbox = 1
