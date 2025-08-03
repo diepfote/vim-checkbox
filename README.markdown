@@ -11,6 +11,14 @@ Simple plugin that toggles text checkboxes in Vim. Works great if you're using
 a markdown file for notes and todo lists.
 
 
+Requirements
+------------
+
+The action provided by this plugin can be repeated with the native
+action `.`.
+This is provided by `tpope/vim-repeat`. Please be sure to install it
+before installing this plugin.
+
 Installation
 ------------
 
