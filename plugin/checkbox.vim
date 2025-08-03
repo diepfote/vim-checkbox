@@ -83,7 +83,11 @@ fu! s:ToggleCB()
 endf
 
 
-nnoremap <silent> <leader>tt <plug>ToggleCheckbox<cr>
+
+if !hasmapto('<Plug>ToggleCheckbox')
+    nmap <leader>tt <plug>ToggleCheckbox
+endif
+
 nnoremap <silent> <plug>ToggleCheckbox
                   \ :<c-u>call <sid>ToggleCB()<cr>
 

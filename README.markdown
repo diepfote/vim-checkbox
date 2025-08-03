@@ -25,6 +25,18 @@ Installation
 Just copy the script into your plugin folder, e.g. `~/.vim/plugin/`. If you're
 using pathogen, just clone this repository in `~/.vim/bundle`.
 
+Custom mappings
+---------------
+
+If you do not want to use `<leader>tt` you can set it via e.g.:
+
+```text
+augroup checkbox_mappings
+    nnoremap <leader>oo <plug>ToggleCheckbox
+augroup END
+```
+
+Hint: In this case the default mapping `<leader>tt` will not be configured.
 
 Usage
 -----
