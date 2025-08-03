@@ -79,12 +79,12 @@ fu! s:ToggleCB()
 
 	call setline('.', line)
 
-    silent! call repeat#set("\<plug>CheckboxToggle")
+    silent! call repeat#set("\<plug>ToggleCheckbox")
 endf
 
 
-nnoremap <silent> <leader>tt <plug>CheckboxToggle<cr>
-nnoremap <silent> <plug>CheckboxToggle
+nnoremap <silent> <leader>tt <plug>ToggleCheckbox<cr>
+nnoremap <silent> <plug>ToggleCheckbox
                   \ :<c-u>call <sid>ToggleCB()<cr>
 
 command! ToggleCB  :call <sid>ToggleCB()
